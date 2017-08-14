@@ -4,7 +4,7 @@ This is a python library which abstracts the usage of Turtlebot2's to a simple P
 
 ## First Time Setup
 
-First you will need a Turtlebot2 with ROS Hydro installed and with all the turtlebot debs installed:
+First you will need a Turtlebot2 with ROS Kinetic installed and with all the turtlebot debs installed:
 
     $ sudo apt-get install ros-kinetic-turtlebot ros-kinetic-freenect-launch
 
@@ -48,7 +48,26 @@ First you will need to start the turtlebot2 software, I have provided a launch f
 
 This will launch all of the ROS programs required to have the turtlebot up and running. If you get some errors about unloading nodelets, ROS may have been starting on boot. Stop it so you can run it locally by running `sudo service ros stop` before invoking the above `roslaunch` command.
 
-Next run the ipython notebook in another terminal:
+On ROS Kinetic with Xenial, jupyter defaults to Python 3, so we need to configure our environment to list Python 2 as an available kernel:
+
+    $ mkdir -p ~/.ipython/kernels/python2
+    $ cat > ~/.ipython/kernels/python2/kernel.json
+    {
+        "display_name": "Python 2",
+        "language": "python",
+        "argv": [
+            "python2",
+            "-c", "from ipykernel.kernelapp import main; main();",
+            "-f", "{connection_file}"
+        ],
+        "codemirror_mode": {
+            "version": 3,
+            "name": "ipython"
+        }
+    }
+    ^D
+
+Next run the jupyter notebook in another terminal:
 
     $ source ~/pyturtlebot/build/devel/setup.bash
     $ jupyter notebook --port=5555 --ip=* --notebook-dir=~/pyturtlebot/notebooks
