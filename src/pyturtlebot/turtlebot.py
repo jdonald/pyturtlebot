@@ -234,19 +234,19 @@ class Turtlebot(object):
         return self.current_laser_msg.ranges
 
     def say_ranges(self):
-	msg = self.current_laser_msg
-	rngs = msg.ranges
-	self.say("range angle_min is {0}".format(msg.angle_min))
-	self.say("range angle_max is {0}".format(msg.angle_max))
-	self.say("range size is {0}".format(len(rngs)))
-	self.say("range min is {0}".format(msg.range_min))
-	self.say("range max is {0}".format(msg.range_max))
+        msg = self.current_laser_msg
+        rngs = msg.ranges
+        self.say("range angle_min is {0}".format(msg.angle_min))
+        self.say("range angle_max is {0}".format(msg.angle_max))
+        self.say("range size is {0}".format(len(rngs)))
+        self.say("range min is {0}".format(msg.range_min))
+        self.say("range max is {0}".format(msg.range_max))
 
-	for i in range(0, 63):
-	    rng_pos = i * 10
-	    self.say("Range {0} is {1}".format(rng_pos, rngs[rng_pos]))
-	    rng_pos += 5
-	    self.say("Range {0} is {1}".format(rng_pos, rngs[rng_pos]))
+        for i in range(0, 63):
+            rng_pos = i * 10
+            self.say("Range {0} is {1}".format(rng_pos, rngs[rng_pos]))
+            rng_pos += 5
+            self.say("Range {0} is {1}".format(rng_pos, rngs[rng_pos]))
 
     def index_to_rad(self, idx):
         msg = self.current_laser_msg
@@ -274,8 +274,8 @@ class Turtlebot(object):
         return rngs[idx], rad
 
     def point_at_closest(self):
-	rng, rad = self.find_closest()
-	self.turn_angle(rad)
+        rng, rad = self.find_closest()
+        self.turn_angle(rad)
 
     def reset_movement(self):
         self.movement_enabled = True
