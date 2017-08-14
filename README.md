@@ -51,7 +51,7 @@ This will launch all of the ROS programs required to have the turtlebot up and r
 Next run the ipython notebook in another terminal:
 
     $ source ~/pyturtlebot/build/devel/setup.bash
-    $ ipython notebook --pylab=inline --port=5555 --ip=* --notebook-dir=~/pyturtlebot/notebooks
+    $ jupyter notebook --port=5555 --ip=* --notebook-dir=~/pyturtlebot/notebooks
 
 ## Using the demo
 
@@ -69,6 +69,7 @@ This should bring you to a page where you can open existing notebooks or create 
 
 # <codecell>
 
+%pylab inline
 from pyturtlebot import get_robot
 
 robot = get_robot()
