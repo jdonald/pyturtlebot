@@ -6,7 +6,7 @@ This is a python library which abstracts the usage of Turtlebot2's to a simple P
 
 First you will need a Turtlebot2 with ROS Hydro installed and with all the turtlebot debs installed:
 
-    $ sudo apt-get install ros-hydro-turtlebot ros-hydro-freenect-launch
+    $ sudo apt-get install ros-kinetic-turtlebot ros-kinetic-freenect-launch
 
 You will also need the `ipython-notebook` debs:
 
@@ -17,9 +17,9 @@ Once you have all of the turtlebot debs installed, you will need to build the `p
     $ git clone https://github.com/wjwwood/pyturtlebot
     $ cd pyturtlebot
 
-Next build the package after `source`'ing the environment setup file for hydro:
+Next build the package after `source`'ing the environment setup file for kinetic:
 
-    $ source /opt/ros/hydro/setup.bash
+    $ source /opt/ros/kinetic/setup.bash
     $ mkdir build
     $ cd build
     $ cmake ..
